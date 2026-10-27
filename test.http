@@ -1,0 +1,41 @@
+###
+#
+# Browse books
+#
+GET http://localhost:4004/odata/V4/catalog/Books
+
+###
+#
+# Select a single id
+GET http://localhost:4004/odata/V4/catalog/Books(ID=09f1d043-d95f-42cf-b6ae-e76d5526cb74)
+
+###
+#
+#post a request
+POST http://localhost:4004/odata/V4/catalog/Books
+Content-Type: application/json
+
+{
+    "title" : "Oliver",
+    "author" : "Great Me",
+    "Price" : 45.8,
+    "stock" : 25
+}
+
+###
+#
+#Update a request
+PATCH  http://localhost:4004/odata/V4/catalog/Books(ID=5545a60c-e354-4a42-ae01-e28b187fca09)
+Content-Type: application/json
+
+{
+    "title" : "MyNew Book",
+    "author" : "Great Me",
+    "Price" : 52.8,
+    "stock" : 85
+}
+
+###
+#
+#Delete a request
+DELETE   http://localhost:4004/odata/V4/catalog/Books(ID=5545a60c-e354-4a42-ae01-e28b187fca09)
